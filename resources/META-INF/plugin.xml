@@ -25,6 +25,9 @@
   <!--suppress PluginXmlValidity -->
   <depends optional="true" config-file="studio-contribs.xml">com.intellij.modules.androidstudio</depends>
 
+  <!-- <depends optional="true" config-file="intellij/android/adt/ui.xml">com.android.tools.adtui</depends> -->
+
+
   <change-notes>
     <![CDATA[
 <h2>26.0</h2>
@@ -664,6 +667,12 @@
                 factoryClass="io.flutter.view.FlutterViewFactory"/>
     <projectService serviceInterface="io.flutter.view.FlutterView"
                     serviceImplementation="io.flutter.view.FlutterView"
+                    overrides="false"/>
+
+    <toolWindow id="Flutter PerfTools" anchor="right" icon="FlutterIcons.Flutter_13"
+                factoryClass="io.flutter.view.PerfViewFactory"/>
+    <projectService serviceInterface="io.flutter.view.PerfView"
+                    serviceImplementation="io.flutter.view.PerfView"
                     overrides="false"/>
 
     <projectOpenProcessor id="flutter" implementation="io.flutter.project.FlutterProjectOpenProcessor" order="first"/>
